@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "-g",
+                "-Wall",
+                "-std=c11",
+                "-pedantic-errors",
+                "-Wno-switch",
+                "-D_GNU_SOURCE",
+                "${fileDirname}${pathSeparator}*.c",
+                "-o",
+                "${fileDirname}/${workspaceFolderBasename}"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe compilar archivo activo",
+            "command": "C:\\MinGW\\bin\\gcc.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tarea generada por el depurador."
+        }
+    ]
+}
